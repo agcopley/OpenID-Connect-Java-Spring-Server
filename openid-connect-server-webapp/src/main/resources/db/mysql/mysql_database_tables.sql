@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS client_details (
 	id_token_validity_seconds BIGINT DEFAULT 600 NOT NULL,
 	device_code_validity_seconds BIGINT,
 	
-	client_id VARCHAR(256),
+	client_id BIGINT,
 	client_secret TEXT,
 	access_token_validity_seconds BIGINT,
 	refresh_token_validity_seconds BIGINT,
