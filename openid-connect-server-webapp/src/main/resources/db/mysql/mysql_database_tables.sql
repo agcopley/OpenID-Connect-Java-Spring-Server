@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS blacklisted_site (
 CREATE TABLE IF NOT EXISTS client_details (
 	id BIGINT AUTO_INCREMENT PRIMARY KEY,
 
-	client_description VARCHAR(1024),
+	client_description TEXT,
 	reuse_refresh_tokens BOOLEAN DEFAULT true NOT NULL,
 	dynamically_registered BOOLEAN DEFAULT false NOT NULL,
 	allow_introspection BOOLEAN DEFAULT false NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS client_details (
 	device_code_validity_seconds BIGINT,
 	
 	client_id VARCHAR(256),
-	client_secret VARCHAR(2048),
+	client_secret TEXT,
 	access_token_validity_seconds BIGINT,
 	refresh_token_validity_seconds BIGINT,
 	
@@ -142,14 +142,14 @@ CREATE TABLE IF NOT EXISTS client_details (
 	token_endpoint_auth_method VARCHAR(256),
 	subject_type VARCHAR(256),
 	
-	logo_uri VARCHAR(2048),
-	policy_uri VARCHAR(2048),
-	client_uri VARCHAR(2048),
-	tos_uri VARCHAR(2048),
+	logo_uri TEXT,
+	policy_uri TEXT,
+	client_uri TEXT,
+	tos_uri TEXT,
 
-	jwks_uri VARCHAR(2048),
-	jwks VARCHAR(8192),
-	sector_identifier_uri VARCHAR(2048),
+	jwks_uri TEXT,
+	jwks TEXT,
+	sector_identifier_uri TEXT,
 	
 	request_object_signing_alg VARCHAR(256),
 	
@@ -166,12 +166,12 @@ CREATE TABLE IF NOT EXISTS client_details (
 	default_max_age BIGINT,
 	require_auth_time BOOLEAN,
 	created_at TIMESTAMP NULL,
-	initiate_login_uri VARCHAR(2048),
+	initiate_login_uri TEXT,
 	clear_access_tokens_on_refresh BOOLEAN DEFAULT true NOT NULL,
 	
-	software_statement VARCHAR(4096),
-	software_id VARCHAR(2048),
-	software_version VARCHAR(2048),
+	software_statement TEXT,
+	software_id TEXT,
+	software_version TEXT,
 	
 	code_challenge_method VARCHAR(256),
 	
